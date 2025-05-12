@@ -21,6 +21,13 @@ export default StyleSheet.create({
         width: 80,
         height: 40, 
     },
+    homeButton: {
+        position: 'absolute',
+        top: 63,
+        left : 300,
+        width: 100,
+        height: 100,
+    },
     imageBackground: {
         width: width,
         alignSelf: 'center',

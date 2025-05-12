@@ -9,7 +9,7 @@ import {
     ScrollView,
     TextInput,
 } from 'react-native';
-import {ArrowLeft} from 'phosphor-react-native';
+import {ArrowLeft, HouseSimple} from 'phosphor-react-native';
 import addStyles from './styles'
 import { Picker } from '@react-native-picker/picker';
 import DateTimePicker from '@react-native-community/datetimepicker';
@@ -70,6 +70,9 @@ const AddRemedio = () => {
                     >
                     <TouchableOpacity style={addStyles.icon} onPress={() => navigation.navigate('Menu')}>
                         <ArrowLeft size={32} color="white" weight="bold" />
+                    </TouchableOpacity>
+                    <TouchableOpacity style={addStyles.homeButton} onPress={() => navigation.navigate('Home')}>
+                        <HouseSimple size={32} weight="bold" color="white" />
                     </TouchableOpacity>
                     </ImageBackground>
                     <Text style={addStyles.title}>Adicionar remédio</Text>

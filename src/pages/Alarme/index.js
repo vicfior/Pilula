@@ -5,6 +5,8 @@ import { useNavigation } from '@react-navigation/native';
 import {ArrowLeft, HouseSimple} from 'phosphor-react-native';
 
 const Alarme = () => {
+    const navigation = useNavigation();
+
     return (
         <SafeAreaView>
             <View>

@@ -54,15 +54,15 @@ const ListaRemedio = () => {
     return (
         <SafeAreaView style={styles.main}>
             <View contentContainerStyle={styles.scrollContent}>
-                <Text style={styles.title}>Seus Remédios</Text>
                 <TouchableOpacity style={styles.backButton} onPress={() => navigation.navigate('Menu')}>
                     <ArrowLeft size={30} weight="bold" color="#4C4C4C" />
                 </TouchableOpacity>
-
                 <TouchableOpacity style={styles.homeButton} onPress={() => navigation.navigate('Home')}>
                     <HouseSimple size={30} weight="bold" color="#4C4C4C" />
                 </TouchableOpacity>
-
+                
+                <Text style={styles.title}>Seus Remédios</Text>
+            
                 <FlatList
                     data={remedios}
                     renderItem={renderItem}

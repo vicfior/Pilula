@@ -33,6 +33,9 @@ const Menu = () => {
                     <TouchableOpacity style={styles.button} onPress={() => navigation.navigate('ListaHorarios')}>
                         <Text style={styles.buttonText}>Lista de Horários</Text>
                     </TouchableOpacity>
+                    <TouchableOpacity style={styles.button} onPress={() => navigation.navigate('Alarme')}>
+                        <Text style={styles.buttonText}>Alarme</Text>
+                    </TouchableOpacity>
                     <TouchableOpacity style={styles.button} onPress={() => navigation.navigate('Home')}>
                         <Text style={styles.buttonText}>Sair</Text>
                     </TouchableOpacity>
