@@ -3,6 +3,7 @@ import {NavigationContainer} from "@react-navigation/native";
 import {createStackNavigator} from "@react-navigation/stack";
 
 import Home from "../pages/Home";
+import AddRemedio from "../pages/AddRemedio";
 
 const Stack = createStackNavigator();
 
@@ -11,6 +12,7 @@ function Routes() {
         <NavigationContainer>
             <Stack.Navigator>
                 <Stack.Screen name="Home" component={Home} options={{headerShown: false}} />
+                <Stack.Screen name="AddRemedio" component={AddRemedio} options={{headerShown: false}} />
             </Stack.Navigator>
         </NavigationContainer>
     )

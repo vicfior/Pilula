@@ -11,10 +11,13 @@ import {
 import Icon from 'react-native-vector-icons/Ionicons';
 import styles from './homeStyles';
 import homeStyles from './homeStyles';
+import { useNavigation } from '@react-navigation/native';
 
 const pillsImage = require('../../images/pilula.png');
 
 const Home = () => {
+    const navigation = useNavigation();
+
     return (
         <SafeAreaView style={homeStyles.main}>
             <Image source={pillsImage} style={homeStyles.pillsImage} />
@@ -23,7 +26,7 @@ const Home = () => {
             </Text>
             <Text style={homeStyles.bodyText}>Ajudando você a lembrar de cuidar de quem importa!</Text>
             <TouchableOpacity style={homeStyles.button}>
-                <Text style={homeStyles.buttonText}>Comece agora</Text>
+                <Text style={homeStyles.buttonText} onPress={() => navigation.navigate('AddRemedio')}>Comece agora</Text>
             </TouchableOpacity>
         
         </SafeAreaView>
