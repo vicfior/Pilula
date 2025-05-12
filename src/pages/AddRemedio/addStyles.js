@@ -12,7 +12,7 @@ export default StyleSheet.create({
         fontSize: 23,
         color: 'white',
         textAlign: 'center',
-        bottom: 205
+        transform: [{ translateY: -207 }],
     },
     icon: {
         position: 'absolute',
@@ -30,7 +30,7 @@ export default StyleSheet.create({
         alignSelf: 'center',
         width: 130,
         resizeMode: 'contain',
-        bottom: 555,
+        marginTop: -555,
         left: 3
     },
     inputContainer: {
@@ -47,11 +47,30 @@ export default StyleSheet.create({
     input: {
         backgroundColor: 'white',
         borderRadius: 8,
-        borderColor: '#000',
-        padding: 16,
+        borderColor: '#C0C0BF',
+        borderWidth: 1,
+        padding: 10,
         fontFamily: 'Nunito_500Medium',
         fontSize: 16,
-        color: '#000',
+        color: '#686868',
         textAlign: 'left',
+    },
+    form: {
+        marginTop: -330,
+    },  
+    saveButton: {
+        backgroundColor: '#FFA726',
+        width: 100,
+        height: 45,
+        borderRadius: 30,
+        justifyContent: 'center',
+        alignItems: 'center',
+        alignSelf: 'center',
+
+    },
+    saveButtonText: {
+        fontFamily: 'Nunito_800ExtraBold',
+        fontSize: 18,
+        color: '#fffdf4',
     },
 });
