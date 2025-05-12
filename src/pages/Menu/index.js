@@ -10,8 +10,8 @@ import {
     ScrollView,
 } from 'react-native';
 import Icon from 'react-native-vector-icons/Ionicons';
-import styles from './menuStyles'; 
-import { useNavigation } from '@react-navigation/native';
+import styles from './styles'; 
+import { NavigationContainer, useNavigation } from '@react-navigation/native';
 
 const pillsImage = require('../../images/pilula.png');
 
@@ -30,7 +30,7 @@ const Menu = () => {
                     <TouchableOpacity style={styles.button} onPress={() => navigation.navigate('ListaRemedio')}>
                         <Text style={styles.buttonText}>Lista de remédios</Text>
                     </TouchableOpacity>
-                    <TouchableOpacity style={styles.button}>
+                    <TouchableOpacity style={styles.button} onPress={() => navigation.navigate('ListaHorarios')}>
                         <Text style={styles.buttonText}>Lista de Horários</Text>
                     </TouchableOpacity>
                     <TouchableOpacity style={styles.button} onPress={() => navigation.navigate('Home')}>

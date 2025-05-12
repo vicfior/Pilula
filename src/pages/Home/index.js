@@ -9,7 +9,7 @@ import {
     Image,
 } from 'react-native';
 import Icon from 'react-native-vector-icons/Ionicons';
-import homeStyles from './homeStyles';
+import homeStyles from './styles'
 import { useNavigation } from '@react-navigation/native';
 
 const pillsImage = require('../../images/pilula.png');
