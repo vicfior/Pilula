@@ -12,7 +12,9 @@ import {
  } from '@expo-google-fonts/nunito';
 import AppLoading from 'expo-app-loading';
 
+//contexts
 import { RemedioProvider } from '../Contexts/RemedioContext';
+import { AlarmeProvider } from '../Contexts/AlarmeContext';
 
 const App = () => {
   let [fontsLoaded] = useFonts({
@@ -28,10 +30,12 @@ const App = () => {
   } else {
     return (
       <RemedioProvider>
-        <View style={styles.container}>
-          <Routes />
-          <StatusBar style="auto" />
-        </View>
+        <AlarmeProvider>
+          <View style={styles.container}>
+            <Routes />
+            <StatusBar style="auto" />
+          </View>
+        </AlarmeProvider>
       </RemedioProvider>
     );
   }

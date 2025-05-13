@@ -8,6 +8,8 @@ import ListaRemedio from "../pages/ListaRemedio";
 import Menu from "../pages/Menu";
 import ListaHorarios from "../pages/ListaHorarios";
 import Alarme from "../pages/Alarme";
+import EditarAlarme from "../pages/Alarme/EditarAlarme";
+import AlarmeTela from "../pages/Alarme/AlarmeTela";
 
 const Stack = createStackNavigator();
 
@@ -21,6 +23,8 @@ function Routes() {
                 <Stack.Screen name="Menu" component={Menu} options={{headerShown: false}} />
                 <Stack.Screen name="ListaHorarios" component={ListaHorarios} options={{headerShown: false}} />
                 <Stack.Screen name="Alarme" component={Alarme} options={{headerShown: false}} />
+                <Stack.Screen name="EditarAlarme" component={EditarAlarme} options={{headerShown: false}} />
+                <Stack.Screen name="AlarmeTela" component={AlarmeTela} options={{headerShown: false}} />
             </Stack.Navigator>
         </NavigationContainer>
     )

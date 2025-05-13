@@ -21,7 +21,7 @@ import xaropeImagem from '../../images/xarope.png'
 import injecaoImagem from '../../images/injecao.png'
 import inaladorImagem from '../../images/inalador.png'
 
-const gerarHorarios = (horaInicial, frequencia, duracao) => { 
+export const gerarHorarios = (horaInicial, frequencia, duracao) => { 
         const horarios = [];
         const horaBase = new Date();
         const [hora, minuto] = horaInicial.split(':').map(Number);

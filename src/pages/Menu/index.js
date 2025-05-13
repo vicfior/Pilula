@@ -34,7 +34,7 @@ const Menu = () => {
                         <Text style={styles.buttonText}>Lista de Horários</Text>
                     </TouchableOpacity>
                     <TouchableOpacity style={styles.button} onPress={() => navigation.navigate('Alarme')}>
-                        <Text style={styles.buttonText}>Alarme</Text>
+                        <Text style={styles.buttonText}>Seus Alarmes</Text>
                     </TouchableOpacity>
                     <TouchableOpacity style={styles.button} onPress={() => navigation.navigate('Home')}>
                         <Text style={styles.buttonText}>Sair</Text>

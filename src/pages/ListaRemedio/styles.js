@@ -73,7 +73,7 @@ export default StyleSheet.create({
     backButton: {
         position: 'absolute',
         top: 63,
-        right:150,
+        right:70,
         width: 80,
         height: 40, 
     },
@@ -103,7 +103,7 @@ export default StyleSheet.create({
     homeButton: {
         position: 'absolute',
         top: 63,
-        left:200,
+        left:120,
         width: 80,
         height: 40, 
     },
