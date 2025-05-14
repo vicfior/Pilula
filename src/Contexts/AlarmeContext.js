@@ -1,5 +1,3 @@
-// src/Contexts/AlarmeContext.js
-
 import React, { createContext, useContext, useEffect, useState } from 'react';
 import { RemedioContext } from './RemedioContext';
 import { gerarHorarios } from '../pages/ListaHorarios'
