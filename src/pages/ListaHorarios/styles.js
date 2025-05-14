@@ -58,4 +58,10 @@ export default StyleSheet.create ({
         right: 5,
         resizeMode: 'contain',
     },
+    administrado: {
+        marginTop: 6,
+        color: 'gray',
+        fontSize: 16,
+        fontFamily: 'Nunito_700Bold',
+    }
 });

@@ -23,7 +23,7 @@ export default StyleSheet.create ({
     backButton: {
         position: 'absolute',
         top: 63,
-        right:250,
+        right:140,
         width: 80,
         height: 40, 
     },
@@ -68,14 +68,14 @@ export default StyleSheet.create ({
         left: width - 113,
     },
     alarmButton: {
-    position: 'absolute',
-    top: 60,
-    left : 300,
-    width: 80,
-    height: 40,
+        position: 'absolute',
+        top: 60,
+        left : 180,
+        width: 80,
+        height: 40,
     },
     sectionList: {
-    backgroundColor: '#fffdf4', // ou qualquer cor que quiser
-    paddingBottom: 20,
+        backgroundColor: '#fffdf4', 
+        paddingBottom: 50,
     },
 });

@@ -15,6 +15,7 @@ import AppLoading from 'expo-app-loading';
 //contexts
 import { RemedioProvider } from '../Contexts/RemedioContext';
 import { AlarmeProvider } from '../Contexts/AlarmeContext';
+import { HistoricoProvider } from '../Contexts/HistoricoContext';
 
 const App = () => {
   let [fontsLoaded] = useFonts({
@@ -31,10 +32,12 @@ const App = () => {
     return (
       <RemedioProvider>
         <AlarmeProvider>
-          <View style={styles.container}>
-            <Routes />
-            <StatusBar style="auto" />
-          </View>
+          <HistoricoProvider>
+            <View style={styles.container}>
+              <Routes />
+              <StatusBar style="auto" />
+            </View>
+          </HistoricoProvider>
         </AlarmeProvider>
       </RemedioProvider>
     );

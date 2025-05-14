@@ -57,7 +57,7 @@ const Alarme = () => {
     }, []);
 
     return (
-        <SafeAreaView styles={styles.main}>
+        <SafeAreaView style={styles.main}>
             <View style={styles.header}>
                 <TouchableOpacity style={styles.backButton} onPress={() => navigation.navigate('Menu')}>
                     <ArrowLeft size={30} color="#4C4C4C" weight="bold" />
@@ -77,6 +77,7 @@ const Alarme = () => {
                     </View>
                 )}
                 style={styles.sectionList}
+                contentContainerStyle={{ paddingBottom: 30 }}
             />
             
         </SafeAreaView>

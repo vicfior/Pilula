@@ -10,12 +10,14 @@ import ListaHorarios from "../pages/ListaHorarios";
 import Alarme from "../pages/Alarme";
 import EditarAlarme from "../pages/Alarme/EditarAlarme";
 import AlarmeTela from "../pages/Alarme/AlarmeTela";
+import { AlertaListener } from "../Components/AlertaListener";
 
 const Stack = createStackNavigator();
 
 function Routes() {
     return (
         <NavigationContainer>
+            <AlertaListener />
             <Stack.Navigator>
                 <Stack.Screen name="Home" component={Home} options={{headerShown: false}} />
                 <Stack.Screen name="AddRemedio" component={AddRemedio} options={{headerShown: false}} />

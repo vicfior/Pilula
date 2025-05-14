@@ -13,6 +13,7 @@ import styles from './styles'
 import { useNavigation } from '@react-navigation/native';
 import { RemedioContext } from '../../Contexts/RemedioContext';
 import {ArrowLeft, HouseSimple} from 'phosphor-react-native';
+import { useHistorico } from '../../Contexts/HistoricoContext';
 
 //imagens
 import capsulaImagem from '../../images/capsula.png'
@@ -73,6 +74,7 @@ export const gerarHorarios = (horaInicial, frequencia, duracao) => {
 
 const ListaHorarios = () => {
     const { remedios } = useContext(RemedioContext);
+    const { Verificacao } = useHistorico();
     const navigation = useNavigation();
     
     //agrupa os horários
@@ -117,7 +119,7 @@ const ListaHorarios = () => {
 
     return (
         <SafeAreaView style={styles.main}>
-            <TouchableOpacity style={styles.backButton} onPress={() => navigation.goBack()}>
+            <TouchableOpacity style={styles.backButton} onPress={() => navigation.navigate('Menu')}>
                 <ArrowLeft size={30} color="#4C4C4C" weight="bold" />
             </TouchableOpacity>
             <Text style={styles.title}>Horários</Text>
@@ -128,14 +130,21 @@ const ListaHorarios = () => {
                 renderSectionHeader={({ section: { title } }) => (
                     <Text style={styles.sectionHeader}>{title}</Text>
                 )}
-                renderItem={({ item }) => (
-                    <View style={styles.card}>
-                        <Image source={getTipoImagem(item.tipo)} style={styles.tipoImagem} />
-                        <Text style={styles.name}>{item.nome}</Text>
-                        <Text style={styles.subtitle}>{item.tipo}</Text>
-                        <Text style={styles.text}>Horário: {item.hora}</Text>
-                    </View>
-                )}
+                renderItem={({ item }) => {
+                    const foiAdministrado = Verificacao(item); // item já tem nome, tipo, dia e hora
+
+                    return (
+                        <View style={styles.card}>
+                            <Image source={getTipoImagem(item.tipo)} style={styles.tipoImagem} />
+                            <Text style={styles.name}>{item.nome}</Text>
+                            <Text style={styles.subtitle}>{item.tipo}</Text>
+                            <Text style={styles.text}>Horário: {item.hora}</Text>
+                            {foiAdministrado && (
+                                <Text style={styles.administrado}>Administrado</Text>
+                            )}
+                        </View>
+                    );
+                }}
                 contentContainerStyle={styles.list}
             />
         </SafeAreaView>
