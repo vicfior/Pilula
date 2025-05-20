@@ -36,8 +36,8 @@ const Menu = () => {
                     <TouchableOpacity style={styles.button} onPress={() => navigation.navigate('Alarme')}>
                         <Text style={styles.buttonText}>Seus Alarmes</Text>
                     </TouchableOpacity>
-                    <TouchableOpacity style={styles.button} onPress={() => navigation.navigate('Home')}>
-                        <Text style={styles.buttonText}>Sair</Text>
+                    <TouchableOpacity style={styles.button} onPress={() => navigation.navigate('User')}>
+                        <Text style={styles.buttonText}>Informações da Conta</Text>
                     </TouchableOpacity>
                 </View>
             </ScrollView>

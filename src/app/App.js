@@ -16,6 +16,7 @@ import AppLoading from 'expo-app-loading';
 import { RemedioProvider } from '../Contexts/RemedioContext';
 import { AlarmeProvider } from '../Contexts/AlarmeContext';
 import { HistoricoProvider } from '../Contexts/HistoricoContext';
+import { AuthProvider } from '../Contexts/AuthContext';
 
 const App = () => {
   let [fontsLoaded] = useFonts({
@@ -30,16 +31,18 @@ const App = () => {
     return <AppLoading/>;
   } else {
     return (
-      <RemedioProvider>
-        <AlarmeProvider>
-          <HistoricoProvider>
-            <View style={styles.container}>
-              <Routes />
-              <StatusBar style="auto" />
-            </View>
-          </HistoricoProvider>
-        </AlarmeProvider>
-      </RemedioProvider>
+      <AuthProvider>
+        <RemedioProvider>
+          <AlarmeProvider>
+            <HistoricoProvider>
+              <View style={styles.container}>
+                <Routes />
+                <StatusBar style="auto" />
+              </View>
+            </HistoricoProvider>
+          </AlarmeProvider>
+        </RemedioProvider>
+      </AuthProvider>
     );
   }
 }
