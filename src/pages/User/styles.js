@@ -3,7 +3,7 @@ import { StyleSheet } from 'react-native';
 export const styles = StyleSheet.create({
     container: {
         flex: 1,
-        backgroundColor: '#fffdf4',
+        backgroundColor: '#fff',
     },
     scrollView: {
         flex: 1,
@@ -14,6 +14,7 @@ export const styles = StyleSheet.create({
         borderBottomWidth: 1,
         borderBottomColor: '#FFA726',
         backgroundColor: '#fff',
+        marginTop: 60,
     },
     headerTitle: {
         fontFamily: 'Nunito_700Bold',
@@ -22,8 +23,15 @@ export const styles = StyleSheet.create({
     },
     backButton: {
         position: 'absolute',
+        top: 20,
         left: 20,
-        top: 30,
+        width: 44,
+        height: 60,
+        zIndex: 1,
+        justifyContent: 'center',
+        alignItems: 'center',
+        backgroundColor: '#fff',
+        borderRadius: 22,
     },
     userName: {
         fontFamily: 'Nunito_800ExtraBold',
@@ -39,6 +47,7 @@ export const styles = StyleSheet.create({
     },
     section: {
         padding: 20,
+        backgroundColor: '#fffdf4',
     },
     sectionTitle: {
         fontFamily: 'Nunito_700Bold',
@@ -79,13 +88,13 @@ export const styles = StyleSheet.create({
         marginBottom: 4,
     },
     optionDescription: {
-        fontFamily: 'Nunito_400Regular',
+        fontFamily: 'Nunito_500Medium',
         fontSize: 14,
         color: '#666',
     },
     signOutButton: {
         borderColor: '#FF5252',
-        marginTop: 20,
+        marginTop: 10,
     },
     signOutText: {
         color: '#FF5252',
@@ -122,14 +131,15 @@ export const styles = StyleSheet.create({
         color: '#fffdf4',
     },
     input: {
-        fontFamily: 'Nunito_500Medium',
+        backgroundColor: '#fff',
+        borderRadius: 15,
+        padding: 15,
         fontSize: 16,
+        fontFamily: 'Nunito_500Medium',
         color: '#000',
-        backgroundColor: '#fffdf4',
-        padding: 10,
-        borderRadius: 8,
         borderWidth: 1,
         borderColor: '#FFA726',
+        width: '100%',
     },
     editButtonsContainer: {
         flexDirection: 'row',
@@ -140,5 +150,32 @@ export const styles = StyleSheet.create({
         backgroundColor: '#666',
         flex: 1,
         marginRight: 10,
+    },
+    userTypeContainer: {
+        marginTop: 0,
+    },
+    userTypeButtons: {
+        flexDirection: 'row',
+        justifyContent: 'space-between',
+        gap: 10,
+    },
+    userTypeButton: {
+        flex: 1,
+        borderRadius: 15,
+        padding: 15,
+        alignItems: 'center',
+        borderWidth: 1,
+        borderColor: '#FFA726',
+    },
+    userTypeButtonActive: {
+        backgroundColor: '#FFA726',
+    },
+    userTypeButtonText: {
+        fontFamily: 'Nunito_600SemiBold',
+        fontSize: 16,
+        color: '#FFA726',
+    },
+    userTypeButtonTextActive: {
+        color: '#fffdf4',
     },
 }); 

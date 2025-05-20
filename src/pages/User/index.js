@@ -12,6 +12,7 @@ import {
 import { useAuth } from '../../Contexts/AuthContext';
 import { useNavigation } from '@react-navigation/native';
 import Icon from 'react-native-vector-icons/Ionicons';
+import { ArrowLeft } from 'phosphor-react-native';
 import { styles } from './styles';
 
 export default function User() {
@@ -22,6 +23,8 @@ export default function User() {
     const [editedUser, setEditedUser] = useState({
         name: user?.name || '',
         phone: user?.phone || '',
+        email: user?.email || '',
+        userType: user?.userType || 'caregiver'
     });
 
     const handlePatientModeToggle = () => {
@@ -46,7 +49,10 @@ export default function User() {
                     onPress: async () => {
                         try {
                             await signOut();
-                            navigation.navigate('Home');
+                            navigation.reset({
+                                index: 0,
+                                routes: [{ name: 'Home' }],
+                            });
                         } catch (error) {
                             console.error(error);
                             Alert.alert("Erro", "Não foi possível sair. Tente novamente.");
@@ -83,7 +89,16 @@ export default function User() {
         },
         { 
             label: 'Email', 
-            value: user?.email 
+            value: isEditing ? (
+                <TextInput
+                    style={styles.input}
+                    value={editedUser.email}
+                    onChangeText={(text) => setEditedUser(prev => ({ ...prev, email: text }))}
+                    placeholder="Digite seu email"
+                    keyboardType="email-address"
+                    autoCapitalize="none"
+                />
+            ) : user?.email
         },
         { 
             label: 'Telefone', 
@@ -99,7 +114,40 @@ export default function User() {
         },
         { 
             label: 'Tipo de Usuário', 
-            value: user?.userType === 'patient' ? 'Paciente' : 'Cuidador' 
+            value: isEditing ? (
+                <View style={styles.userTypeContainer}>
+                    <View style={styles.userTypeButtons}>
+                        <TouchableOpacity
+                            style={[
+                                styles.userTypeButton,
+                                editedUser.userType === 'caregiver' && styles.userTypeButtonActive
+                            ]}
+                            onPress={() => setEditedUser(prev => ({ ...prev, userType: 'caregiver' }))}
+                        >
+                            <Text style={[
+                                styles.userTypeButtonText,
+                                editedUser.userType === 'caregiver' && styles.userTypeButtonTextActive
+                            ]}>
+                                Cuidador
+                            </Text>
+                        </TouchableOpacity>
+                        <TouchableOpacity
+                            style={[
+                                styles.userTypeButton,
+                                editedUser.userType === 'responsible' && styles.userTypeButtonActive
+                            ]}
+                            onPress={() => setEditedUser(prev => ({ ...prev, userType: 'responsible' }))}
+                        >
+                            <Text style={[
+                                styles.userTypeButtonText,
+                                editedUser.userType === 'responsible' && styles.userTypeButtonTextActive
+                            ]}>
+                                Responsável
+                            </Text>
+                        </TouchableOpacity>
+                    </View>
+                </View>
+            ) : (user?.userType === 'caregiver' ? 'Cuidador' : 'Responsável')
         },
     ];
 
@@ -140,6 +188,8 @@ export default function User() {
                                     setEditedUser({
                                         name: user?.name || '',
                                         phone: user?.phone || '',
+                                        email: user?.email || '',
+                                        userType: user?.userType || 'caregiver'
                                     });
                                 }}
                             >
@@ -167,6 +217,12 @@ export default function User() {
 
     return (
         <SafeAreaView style={styles.container}>
+            <TouchableOpacity 
+                style={styles.backButton}
+                onPress={() => navigation.navigate('Menu')}
+            >
+                <ArrowLeft size={28} weight="bold" color="#4C4C4C" />
+            </TouchableOpacity>
             <ScrollView style={styles.scrollView}>
                 <View style={styles.header}>
                     <Icon name="person-circle-outline" size={80} color="#FFA726" />

@@ -21,6 +21,16 @@ import { AlertaListener } from "../Components/AlertaListener";
 
 const Stack = createStackNavigator();
 
+function AuthRoutes() {
+    return (
+        <Stack.Navigator screenOptions={{ headerShown: false }}>
+            <Stack.Screen name="Home" component={Home} />
+            <Stack.Screen name="Login" component={Login} />
+            <Stack.Screen name="Register" component={Register} />
+        </Stack.Navigator>
+    );
+}
+
 function AppRoutes() {
     return (
         <Stack.Navigator screenOptions={{ headerShown: false }}>
@@ -36,15 +46,6 @@ function AppRoutes() {
     );
 }
 
-function AuthRoutes() {
-    return (
-        <Stack.Navigator screenOptions={{ headerShown: false }}>
-            <Stack.Screen name="Login" component={Login} />
-            <Stack.Screen name="Register" component={Register} />
-        </Stack.Navigator>
-    );
-}
-
 function Routes() {
     const { user, isLoading } = useAuth();
 
@@ -56,7 +57,6 @@ function Routes() {
         <NavigationContainer>
             <AlertaListener />
             <Stack.Navigator screenOptions={{ headerShown: false }}>
-                <Stack.Screen name="Home" component={Home} />
                 {user ? (
                     <Stack.Screen name="App" component={AppRoutes} />
                 ) : (

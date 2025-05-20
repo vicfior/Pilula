@@ -69,10 +69,7 @@ const AddRemedio = () => {
                         resizeMode="cover"
                     >
                     <TouchableOpacity style={addStyles.icon} onPress={() => navigation.navigate('Menu')}>
-                        <ArrowLeft size={32} color="white" weight="bold" />
-                    </TouchableOpacity>
-                    <TouchableOpacity style={addStyles.homeButton} onPress={() => navigation.navigate('Home')}>
-                        <HouseSimple size={32} weight="bold" color="white" />
+                        <ArrowLeft size={28} color="white" weight="bold"/>
                     </TouchableOpacity>
                     </ImageBackground>
                     <Text style={addStyles.title}>Adicionar remédio</Text>

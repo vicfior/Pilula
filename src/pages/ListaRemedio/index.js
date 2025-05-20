@@ -9,7 +9,7 @@ import {
 } from 'react-native';
 import styles from './styles'
 import { useNavigation } from '@react-navigation/native';
-import {ArrowLeft, HouseSimple} from 'phosphor-react-native';
+import {ArrowLeft} from 'phosphor-react-native';
 
 //imagens
 import capsulaImagem from '../../images/capsula.png'
@@ -53,26 +53,24 @@ const ListaRemedio = () => {
 
     return (
         <SafeAreaView style={styles.main}>
-            <View>
-                <TouchableOpacity style={styles.backButton} onPress={() => navigation.navigate('Menu')}>
-                    <ArrowLeft size={30} weight="bold" color="#4C4C4C" />
-                </TouchableOpacity>
-                <TouchableOpacity style={styles.homeButton} onPress={() => navigation.navigate('Home')}>
-                    <HouseSimple size={30} weight="bold" color="#4C4C4C" />
-                </TouchableOpacity>
-            </View>
-                <Text style={styles.title}>Seus Remédios</Text>
+            <TouchableOpacity style={styles.backButton} onPress={() => navigation.navigate('Menu')}>
+                <ArrowLeft size={30} weight="bold" color="#4C4C4C" />
+            </TouchableOpacity>
+            <Text style={styles.title}>Seus Remédios</Text>
             
-                <FlatList
-                    data={remedios}
-                    renderItem={renderItem}
-                    keyExtractor={(_, index) => index.toString()}
-                    contentContainerStyle={styles.list}   
-                />
+            <FlatList
+                data={remedios}
+                renderItem={renderItem}
+                keyExtractor={(_, index) => index.toString()}
+                contentContainerStyle={styles.list}
+                ListEmptyComponent={
+                    <Text style={styles.empty}>Nenhum remédio cadastrado</Text>
+                }
+            />
 
-                <TouchableOpacity style={styles.button} onPress={() => navigation.navigate('AddRemedio')}>
-                    <Text style={styles.buttonText}>Adicionar novo remédio</Text>
-                </TouchableOpacity>
+            <TouchableOpacity style={styles.button} onPress={() => navigation.navigate('AddRemedio')}>
+                <Text style={styles.buttonText}>Adicionar novo remédio</Text>
+            </TouchableOpacity>
         </SafeAreaView>
     );
 }

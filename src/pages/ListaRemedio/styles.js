@@ -15,7 +15,7 @@ export default StyleSheet.create({
         textAlign: 'center',
     },
     list: {
-        paddingBottom: 20,
+        paddingBottom: 100,
         fontFamily: 'Nunito_500Medium',
     },
     empty: {
@@ -73,9 +73,9 @@ export default StyleSheet.create({
     backButton: {
         position: 'absolute',
         top: 63,
-        right:70,
+        right: 250,
         width: 80,
-        height: 40, 
+        height: 40,
     },
     button: {
         backgroundColor: '#FFA726',
@@ -85,6 +85,8 @@ export default StyleSheet.create({
         justifyContent: 'center',
         alignItems: 'center',
         alignSelf: 'center',
+        position: 'absolute',
+        bottom: 20,
     },
     buttonText: {
         color: '#fff',

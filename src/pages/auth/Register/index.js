@@ -216,16 +216,16 @@ export function Register() {
                                     <TouchableOpacity
                                         style={[
                                             styles.userTypeButton,
-                                            value === 'patient' && styles.userTypeButtonActive
+                                            value === 'responsible' && styles.userTypeButtonActive
                                         ]}
-                                        onPress={() => onChange('patient')}
+                                        onPress={() => onChange('responsible')}
                                         disabled={isLoading}
                                     >
                                         <Text style={[
                                             styles.userTypeButtonText,
-                                            value === 'patient' && styles.userTypeButtonTextActive
+                                            value === 'responsible' && styles.userTypeButtonTextActive
                                         ]}>
-                                            Paciente
+                                            Responsável
                                         </Text>
                                     </TouchableOpacity>
                                 </View>
