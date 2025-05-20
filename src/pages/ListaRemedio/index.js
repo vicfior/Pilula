@@ -9,7 +9,7 @@ import {
 } from 'react-native';
 import styles from './styles'
 import { useNavigation } from '@react-navigation/native';
-import {ArrowLeft} from 'phosphor-react-native';
+import {ArrowLeft, CircleNotch} from 'phosphor-react-native';
 
 //imagens
 import capsulaImagem from '../../images/capsula.png'
@@ -35,7 +35,9 @@ const ListaRemedio = () => {
         }
     };
 
-    const renderItem = ({ item }) => (
+    const renderItem = ({ item }) => {
+    console.log('Tipo do item:', item.tipo);
+    return(
         <View style={styles.card}>
             <Text style={styles.hora}>{item.hora}</Text>
             <Image source={getTipoImagem(item.tipo)} style={styles.tipoImagem} />
@@ -50,6 +52,7 @@ const ListaRemedio = () => {
             </View>
         </View>
     );
+};
 
     return (
         <SafeAreaView style={styles.main}>

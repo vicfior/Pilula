@@ -6,7 +6,11 @@ export const RemedioProvider = ({ children }) => {
     const [remedios, setRemedios] = useState([]);
     
     const adicionarRemedio = (novoRemedio) => {
-        setRemedios((prev) => [...prev, novoRemedio]);
+        const remedioParaAdicionar = {
+            ...novoRemedio,
+            tipo: novoRemedio.tipo || 'Comprimido',
+        };
+        setRemedios((prev) => [...prev, remedioParaAdicionar]);
     }
 
     return (
