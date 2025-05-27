@@ -1,17 +1,15 @@
 import React from 'react';
 import { 
     View, 
-    TextView, 
     Text,
     SafeAreaView,
     TouchableOpacity,
-    ImageBackground,  
     Image,
     ScrollView,
 } from 'react-native';
 import Icon from 'react-native-vector-icons/Ionicons';
 import styles from './styles'; 
-import { NavigationContainer, useNavigation } from '@react-navigation/native';
+import { useNavigation } from '@react-navigation/native';
 
 const pillsImage = require('../../images/pilula.png');
 
@@ -38,6 +36,9 @@ const Menu = () => {
                     </TouchableOpacity>
                     <TouchableOpacity style={styles.button} onPress={() => navigation.navigate('User')}>
                         <Text style={styles.buttonText}>Informações da Conta</Text>
+                    </TouchableOpacity>
+                    <TouchableOpacity style={styles.button} onPress={() => navigation.navigate('Historico')}>
+                        <Text style={styles.buttonText}>Histórico</Text>
                     </TouchableOpacity>
                 </View>
             </ScrollView>

@@ -18,6 +18,7 @@ import EditarAlarme from "../pages/Alarme/EditarAlarme";
 import AlarmeTela from "../pages/Alarme/AlarmeTela";
 import User from "../pages/User";
 import { AlertaListener } from "../Components/AlertaListener";
+import Historico from "../pages/Historico";
 
 const Stack = createStackNavigator();
 
@@ -42,6 +43,7 @@ function AppRoutes() {
             <Stack.Screen name="EditarAlarme" component={EditarAlarme} />
             <Stack.Screen name="AlarmeTela" component={AlarmeTela} />
             <Stack.Screen name="User" component={User} />
+            <Stack.Screen name="Historico" component={Historico} />
         </Stack.Navigator>
     );
 }
